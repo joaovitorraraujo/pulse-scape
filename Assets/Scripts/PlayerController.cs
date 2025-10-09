@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 
     private InputAction moveAction;
 
+    private float currentAngle;
+    private float angleVelocity;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +40,23 @@ public class PlayerController : MonoBehaviour
         if (moveInput.sqrMagnitude > 1f)
             moveInput = moveInput.normalized;
     }
+
+    void LateUpdate()
+    {
+    if (moveInput.sqrMagnitude > 0.01f)
+    {
+        float targetAngle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg - 90f;
+        currentAngle = Mathf.SmoothDampAngle(
+            currentAngle,
+            targetAngle,
+            ref angleVelocity,
+            0.08f // tempo para suavizar totalmente (ajuste)
+        );
+        transform.rotation = Quaternion.Euler(0, 0, currentAngle);
+    }
+    }   
+
+
 
     void FixedUpdate()
     {
