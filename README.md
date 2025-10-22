@@ -89,4 +89,4 @@ Cada mundo tem um **chefe único**:
 
 ## 📌 Status do Desenvolvimento
 
-- **Atualmente:** Desenvolvendo método de criação de fases ritmicas.
+- **Link para o Notion:** <a href="https://www.notion.so/PULSE-SCAPE-28690e3ad3cd80118df9c4d1ac1e453c?source=copy_link">Staus de desenvolvimento no Notion✅</a>
