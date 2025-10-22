@@ -381,6 +381,110 @@ MonoBehaviour:
     duration: 1.2
     speed: 0
     mirrorX: 0
+  - beat: 2
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 10, y: 2}
+    pointB: {x: -10, y: 2}
+    timeToStart: 0
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 6
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 10, y: -2}
+    pointB: {x: -10, y: -2}
+    timeToStart: 0
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 8
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 10, y: 0}
+    pointB: {x: -10, y: 0}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 12
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 10, y: 2}
+    pointB: {x: -10, y: 2}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 14
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 10, y: -2}
+    pointB: {x: -10, y: -2}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 16
+    prefab: {fileID: 925793815143280936, guid: 4467470b7092e894994aa537d96f1361, type: 3}
+    pointA: {x: 1, y: -6}
+    pointB: {x: 1, y: 6}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 20
+    prefab: {fileID: 925793815143280936, guid: 4467470b7092e894994aa537d96f1361, type: 3}
+    pointA: {x: -3, y: -6}
+    pointB: {x: -3, y: 6}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 22
+    prefab: {fileID: 925793815143280936, guid: 4467470b7092e894994aa537d96f1361, type: 3}
+    pointA: {x: 3, y: -6}
+    pointB: {x: 3, y: 6}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 26
+    prefab: {fileID: 925793815143280936, guid: 1429c7768005a2d44b68f9249ca35def, type: 3}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 5
+    duration: 5
+    speed: 0
+    mirrorX: 0
+  - beat: 32
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: -10, y: -2}
+    pointB: {x: 10, y: -2}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 32
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 10, y: 2}
+    pointB: {x: -10, y: 2}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 36
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: 2, y: -6}
+    pointB: {x: 2, y: 6}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
+  - beat: 36
+    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    pointA: {x: -2, y: 6}
+    pointB: {x: -2, y: -6}
+    timeToStart: 1.2
+    duration: 1.2
+    speed: 0
+    mirrorX: 0
 --- !u!4 &859500258
 Transform:
   m_ObjectHideFlags: 0
