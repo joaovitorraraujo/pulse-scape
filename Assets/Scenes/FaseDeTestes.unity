@@ -710,7 +710,7 @@ MonoBehaviour:
     speed: 0
     mirrorX: 0
   - beat: 12
-    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
+    prefab: {fileID: 925793815143280936, guid: 4467470b7092e894994aa537d96f1361, type: 3}
     pointA: {x: 10, y: 2}
     pointB: {x: -10, y: 2}
     timeToStart: 1.2
@@ -726,7 +726,7 @@ MonoBehaviour:
     speed: 0
     mirrorX: 0
   - beat: 16
-    prefab: {fileID: 925793815143280936, guid: 4467470b7092e894994aa537d96f1361, type: 3}
+    prefab: {fileID: 925793815143280936, guid: 001c7078ee91920449d1b83aee6a68d4, type: 3}
     pointA: {x: 1, y: -6}
     pointB: {x: 1, y: 6}
     timeToStart: 1.2
@@ -734,7 +734,7 @@ MonoBehaviour:
     speed: 0
     mirrorX: 0
   - beat: 20
-    prefab: {fileID: 925793815143280936, guid: 4467470b7092e894994aa537d96f1361, type: 3}
+    prefab: {fileID: 925793815143280936, guid: 3fd8af62882ec1f47a5f664b41820528, type: 3}
     pointA: {x: -3, y: -6}
     pointB: {x: -3, y: 6}
     timeToStart: 1.2
