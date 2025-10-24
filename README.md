@@ -90,3 +90,5 @@ Cada mundo tem um **chefe único**:
 ## 📌 Status do Desenvolvimento
 
 - **Link para o Notion:** <a href="https://www.notion.so/PULSE-SCAPE-28690e3ad3cd80118df9c4d1ac1e453c?source=copy_link">Staus de desenvolvimento no Notion✅</a>
+
+- **Link para o PressKit do Game:** <a href="https://sites.google.com/view/pulsescape/in%C3%ADcio">Presskit Pulse Scape</a>
