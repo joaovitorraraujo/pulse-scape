@@ -35,19 +35,23 @@ public class PlayerStats : MonoBehaviour
         switch (currentDifficulty)
         {
             case Difficulty.Easy:
+                maxLives = 3;
                 currentLives = 3;
+                currentEnergy = 4;
                 break;
 
             case Difficulty.Normal:
+                maxLives = 3;
                 currentLives = 3;
+                currentEnergy = 4;
                 break;
 
             case Difficulty.Hard:
+                maxLives = 1;
                 currentLives = 1;
+                currentEnergy = 0;
                 break;
         }
-
-        currentEnergy = 0;
     }
 
     // ----------------------------------------------------
@@ -73,11 +77,13 @@ public class PlayerStats : MonoBehaviour
     // ----------------------------------------------------
     void TrySpawnHealItem()
     {
+        Debug.Log("SPAWN HEAL CHAMADO");
+
         if (currentLives < maxLives)
         {
-            Vector2 spawnPos = new Vector2(
-                Random.Range(spawnAreaMin.x, spawnAreaMax.x),
-                Random.Range(spawnAreaMin.y, spawnAreaMax.y)
+            Vector2 spawnPos = Camera.main.ScreenToWorldPoint(
+                new Vector2(Random.Range(100, Screen.width - 100),
+                            Random.Range(100, Screen.height - 100))
             );
 
             Instantiate(healItemPrefab, spawnPos, Quaternion.identity);

@@ -6,6 +6,9 @@ using UnityEngine.InputSystem; // Novo Input System
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
+    private PlayerStats playerStats;
+
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f;
 
@@ -34,7 +37,9 @@ public class PlayerController : MonoBehaviour
     private float angleVelocity;
 
     void Awake()
-    {
+    {   
+        playerStats = GetComponent<PlayerStats>();
+
         rb = GetComponent<Rigidbody2D>();
         var playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
@@ -98,15 +103,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // private void OnDashPerformed(InputAction.CallbackContext ctx)
+    // {
+    //     if (!dashAvailable || isDashing) return;
+
+    //     Vector2 dashDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : lastMoveDirection;
+    //     if (dashDir.sqrMagnitude <= 0.01f) dashDir = Vector2.up; 
+
+    //     StartCoroutine(DoDash(dashDir));
+    // }
     private void OnDashPerformed(InputAction.CallbackContext ctx)
     {
         if (!dashAvailable || isDashing) return;
 
+        // BLOQUEIA O DASH SE NÃO TIVER AO MENOS 1 ENERGIA
+        if (playerStats.currentEnergy < 1)
+        {
+            Debug.Log("Sem energia para dar dash!");
+            return;
+        }
+
+        // GASTA 1 DE ENERGIA
+        playerStats.UseEnergy(1);
+
         Vector2 dashDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : lastMoveDirection;
-        if (dashDir.sqrMagnitude <= 0.01f) dashDir = Vector2.up; 
+        if (dashDir.sqrMagnitude <= 0.01f) dashDir = Vector2.up;
 
         StartCoroutine(DoDash(dashDir));
     }
+
 
     private IEnumerator DoDash(Vector2 dir)
     {
