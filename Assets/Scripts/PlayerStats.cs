@@ -22,6 +22,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Cura (apenas modo fácil)")]
     public GameObject healItemPrefab;   // item de cura no Prefab
+    public GameObject energyItemPrefab;   // item de cura no Prefab
     public Vector2 spawnAreaMin;        // posição mínima da tela
     public Vector2 spawnAreaMax;        // posição máxima da tela
 
@@ -89,12 +90,32 @@ public class PlayerStats : MonoBehaviour
             Instantiate(healItemPrefab, spawnPos, Quaternion.identity);
         }
     }
+    void TrySpawnEnergyItem()
+    {
+        Debug.Log("SPAWN ENERGY CHAMADO");
+
+        if (currentEnergy < maxEnergy)
+        {
+            Vector2 spawnPos = Camera.main.ScreenToWorldPoint(
+                new Vector2(Random.Range(100, Screen.width - 100),
+                            Random.Range(100, Screen.height - 100))
+            );
+
+            Instantiate(energyItemPrefab, spawnPos, Quaternion.identity);
+        }
+    }
 
     public void Heal(int amount)
     {
         currentLives += amount;
         if (currentLives > maxLives)
             currentLives = maxLives;
+    }
+    public void Energy(int amount)
+    {
+        currentEnergy += amount;
+        if (currentEnergy > maxEnergy)
+            currentEnergy = maxEnergy;
     }
 
     // ----------------------------------------------------
@@ -113,6 +134,7 @@ public class PlayerStats : MonoBehaviour
         if (currentEnergy >= amount)
         {
             currentEnergy -= amount;
+            TrySpawnEnergyItem();
             return true;
         }
 
