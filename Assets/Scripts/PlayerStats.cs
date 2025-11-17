@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Difficulty
 {
@@ -147,6 +148,7 @@ public class PlayerStats : MonoBehaviour
     void PlayerDie()
     {
         Debug.Log("PLAYER MORREU!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         // pode chamar GameOver, reiniciar fase etc.
     }
-}
+}   
