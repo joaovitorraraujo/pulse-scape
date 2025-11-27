@@ -16,6 +16,7 @@ public class PlayerStats : MonoBehaviour
     [Header("Vida")]
     public int maxLives = 3;
     public int currentLives;
+    private DamageVFX damageVFX;
 
     [Header("Energia")]
     public int maxEnergy = 4;
@@ -30,6 +31,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         SetupDifficulty();
+        damageVFX = GetComponent<DamageVFX>();
     }
 
     void SetupDifficulty()
@@ -62,6 +64,12 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currentLives -= dmg;
+
+        // efeito de hit
+        if (damageVFX != null)
+            damageVFX.PlayHitFlash();
+
+        CameraShake.Instance.Shake(0.2f, 0.15f);
 
         if (currentDifficulty == Difficulty.Easy)
         {

@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -668,6 +669,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4b1163346547b4f8111c85c6c902f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527709188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,6 +3752,10 @@ PrefabInstance:
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2304923674823949432, guid: 367337a67880b1c418e96b40d6223d41, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4563850623704866236, guid: 367337a67880b1c418e96b40d6223d41, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.36
@@ -3800,6 +3817,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8531228412532276082, guid: 367337a67880b1c418e96b40d6223d41, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4922785987160006856}
+    - targetCorrespondingSourceObject: {fileID: 8531228412532276082, guid: 367337a67880b1c418e96b40d6223d41, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4922785987160006861}
   m_SourcePrefab: {fileID: 100100000, guid: 367337a67880b1c418e96b40d6223d41, type: 3}
 --- !u!1 &4922785987160006849 stripped
 GameObject:
@@ -3851,6 +3871,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 4922785987160006850}
+--- !u!114 &4922785987160006861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4922785987160006849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994a1102b0b9e224999fcc87d1411409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitColor: {r: 1, g: 0.3, b: 0.3, a: 1}
+  flashDuration: 0.05
+  flashCount: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
