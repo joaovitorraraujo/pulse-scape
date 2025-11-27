@@ -102,16 +102,6 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = moveInput * moveSpeed;
         }
     }
-
-    // private void OnDashPerformed(InputAction.CallbackContext ctx)
-    // {
-    //     if (!dashAvailable || isDashing) return;
-
-    //     Vector2 dashDir = moveInput.sqrMagnitude > 0.01f ? moveInput.normalized : lastMoveDirection;
-    //     if (dashDir.sqrMagnitude <= 0.01f) dashDir = Vector2.up; 
-
-    //     StartCoroutine(DoDash(dashDir));
-    // }
     private void OnDashPerformed(InputAction.CallbackContext ctx)
     {
         if (!dashAvailable || isDashing) return;
