@@ -11,6 +11,11 @@ public enum Difficulty
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip damageSound;
+
+
     [Header("Settings")]
     public Difficulty currentDifficulty;
 
@@ -74,6 +79,10 @@ public class PlayerStats : MonoBehaviour
         // efeito de hit
         if (damageVFX != null)
             damageVFX.PlayHitFlash();
+
+         // som de dano
+        if (audioSource != null && damageSound != null)
+            audioSource.PlayOneShot(damageSound);
 
         CameraShake.Instance.Shake(0.2f, 0.15f);
         StartCoroutine(InvincibilityRoutine()); // ativa invencibilidade
