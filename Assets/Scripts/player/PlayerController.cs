@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerStats playerStats;
 
+    private Camera cam;
+
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f;
@@ -49,6 +51,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         originalScale = transform.localScale;
+
+        cam = Camera.main;
+
     }
 
     void OnEnable()
@@ -91,6 +96,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, currentAngle);
         }
         ApplySquashEffect();
+
+        ClampToScreen();
     }
 
 
@@ -101,7 +108,21 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = moveInput * moveSpeed;
         }
+
     }
+
+    void ClampToScreen()
+    {
+        Vector3 pos = transform.position;
+
+        Vector3 viewportPos = cam.WorldToViewportPoint(pos);
+
+        viewportPos.x = Mathf.Clamp(viewportPos.x, 0.03f, 0.97f);
+        viewportPos.y = Mathf.Clamp(viewportPos.y, 0.06f, 0.94f);
+
+        transform.position = cam.ViewportToWorldPoint(viewportPos);
+    }
+
     private void OnDashPerformed(InputAction.CallbackContext ctx)
     {
         if (!dashAvailable || isDashing) return;
