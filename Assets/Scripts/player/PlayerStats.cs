@@ -11,6 +11,10 @@ public enum Difficulty
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Auto Spawn")]
+    public float healSpawnInterval = 10f;
+    public float energySpawnInterval = 10f;
+
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip damageSound;
@@ -42,6 +46,9 @@ public class PlayerStats : MonoBehaviour
     {
         SetupDifficulty();
         damageVFX = GetComponent<DamageVFX>();
+
+        StartCoroutine(AutoSpawnHeal());
+        StartCoroutine(AutoSpawnEnergy());
     }
 
     void SetupDifficulty()
@@ -98,6 +105,33 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    IEnumerator AutoSpawnHeal()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(healSpawnInterval);
+
+            if (currentLives < maxLives)
+            {
+                TrySpawnHealItem();
+            }
+        }
+    }
+
+    IEnumerator AutoSpawnEnergy()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(energySpawnInterval);
+
+            if (currentEnergy < maxEnergy)
+            {
+                TrySpawnEnergyItem();
+            }
+        }
+    }
+
+
     IEnumerator InvincibilityRoutine()
     {
         isInvincible = true;
@@ -118,31 +152,37 @@ public class PlayerStats : MonoBehaviour
     // ----------------------------------------------------
     void TrySpawnHealItem()
     {
-        Debug.Log("SPAWN HEAL CHAMADO");
-
         if (currentLives < maxLives)
-        {
-            Vector2 spawnPos = Camera.main.ScreenToWorldPoint(
-                new Vector2(Random.Range(100, Screen.width - 100),
-                            Random.Range(100, Screen.height - 100))
-            );
-
-            Instantiate(healItemPrefab, spawnPos, Quaternion.identity);
-        }
+            StartCoroutine(SpawnHealDelayed());
     }
+
     void TrySpawnEnergyItem()
     {
-        Debug.Log("SPAWN ENERGY CHAMADO");
-
         if (currentEnergy < maxEnergy)
-        {
-            Vector2 spawnPos = Camera.main.ScreenToWorldPoint(
-                new Vector2(Random.Range(100, Screen.width - 100),
-                            Random.Range(100, Screen.height - 100))
-            );
+            StartCoroutine(SpawnEnergyDelayed());
+    }
+    IEnumerator SpawnHealDelayed()
+    {
+        yield return new WaitForSeconds(0.8f); // DELAY AQUI
 
-            Instantiate(energyItemPrefab, spawnPos, Quaternion.identity);
-        }
+        Vector2 spawnPos = Camera.main.ScreenToWorldPoint(
+            new Vector2(Random.Range(100, Screen.width - 100),
+                        Random.Range(100, Screen.height - 100))
+        );
+
+        Instantiate(healItemPrefab, spawnPos, Quaternion.identity);
+    }
+
+    IEnumerator SpawnEnergyDelayed()
+    {
+        yield return new WaitForSeconds(0.8f); // DELAY AQUI
+
+        Vector2 spawnPos = Camera.main.ScreenToWorldPoint(
+            new Vector2(Random.Range(100, Screen.width - 100),
+                        Random.Range(100, Screen.height - 100))
+        );
+
+        Instantiate(energyItemPrefab, spawnPos, Quaternion.identity);
     }
 
     public void Heal(int amount)

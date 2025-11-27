@@ -4020,9 +4020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d2d46da02dfec4295fd1722bb29cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healSpawnInterval: 10
+  energySpawnInterval: 10
   audioSource: {fileID: 4922785987160006862}
   damageSound: {fileID: 8300000, guid: d4518b78987258b4cb7f73935afe4d2e, type: 3}
-  currentDifficulty: 1
+  currentDifficulty: 0
   maxLives: 3
   currentLives: 0
   invincibleDuration: 1
