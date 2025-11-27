@@ -26,4 +26,15 @@ public class MusicManager : MonoBehaviour
         double secondsPerBeat = 60.0 / bpm;
         return dspSongStartTime + beat * secondsPerBeat;
     }
+
+    public void PauseMusic()
+    {
+        audioSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        audioSource.UnPause();
+    }
+
 }
