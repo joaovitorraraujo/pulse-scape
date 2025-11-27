@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,10 @@ public class PlayerStats : MonoBehaviour
     public int maxLives = 3;
     public int currentLives;
     private DamageVFX damageVFX;
+
+    [Header("Invencibilidade")]
+    public float invincibleDuration = 1f;
+    private bool isInvincible = false;
 
     [Header("Energia")]
     public int maxEnergy = 4;
@@ -63,6 +68,7 @@ public class PlayerStats : MonoBehaviour
     // ----------------------------------------------------
     public void TakeDamage(int dmg)
     {
+        if (isInvincible) return; // ignora dano se estiver invencível
         currentLives -= dmg;
 
         // efeito de hit
@@ -70,6 +76,7 @@ public class PlayerStats : MonoBehaviour
             damageVFX.PlayHitFlash();
 
         CameraShake.Instance.Shake(0.2f, 0.15f);
+        StartCoroutine(InvincibilityRoutine()); // ativa invencibilidade
 
         if (currentDifficulty == Difficulty.Easy)
         {
@@ -80,6 +87,21 @@ public class PlayerStats : MonoBehaviour
         {
             PlayerDie();
         }
+    }
+
+    IEnumerator InvincibilityRoutine()
+    {
+        isInvincible = true;
+
+        // troca layer para ignorar colisão com inimigos
+        gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
+
+        yield return new WaitForSeconds(invincibleDuration);
+
+        // volta ao layer normal
+        gameObject.layer = LayerMask.NameToLayer("Default");
+
+        isInvincible = false;
     }
 
     // ----------------------------------------------------

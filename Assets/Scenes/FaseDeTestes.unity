@@ -3838,9 +3838,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d2d46da02dfec4295fd1722bb29cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDifficulty: 0
+  currentDifficulty: 1
   maxLives: 3
   currentLives: 0
+  invincibleDuration: 1
   maxEnergy: 4
   currentEnergy: 4
   healItemPrefab: {fileID: 4259760832606867527, guid: 49dd7b60c36b3b342873a2533cbbe683, type: 3}
