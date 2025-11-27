@@ -17,8 +17,19 @@ public class LevelEvent
 
 public class LevelDirector : MonoBehaviour
 {
+    public static LevelDirector Instance;
+    private double pausedDSPTimeOffset = 0;
+    private double pausedAtDSP = 0;
     public MusicManager musicManager;
     public List<LevelEvent> events = new List<LevelEvent>();
+
+    public static bool GamePaused = false;
+
+    [System.Obsolete]
+    void Awake()
+    {
+        Instance = this;
+    }
 
     [System.Obsolete]
     void Start()
@@ -39,29 +50,46 @@ public class LevelDirector : MonoBehaviour
     IEnumerator SpawnAtDsp(double spawnDsp, LevelEvent ev)
     {
         // espera até o dspTime de spawn
-        while (AudioSettings.dspTime < spawnDsp)
+        while (AudioSettings.dspTime - pausedDSPTimeOffset < spawnDsp)
+        {
+            while (GamePaused) // pausa REAL
+                yield return null;
             yield return null;
+        }
 
-        // instanciar
+        SpawnEvent(ev);
+    }
+
+    void SpawnEvent(LevelEvent ev)
+    {
         Vector3 spawnPos = new Vector3(ev.pointA.x, ev.pointA.y, 0f);
         GameObject go = Instantiate(ev.prefab, spawnPos, Quaternion.identity);
 
-        // ajustar mirror se necessário
         if (ev.mirrorX)
         {
             var p = go.transform.position; p.x = -p.x; go.transform.position = p;
-            // invert points as well
             ev.pointA.x = -ev.pointA.x;
             ev.pointB.x = -ev.pointB.x;
         }
 
-        // configurar o TimedObstacle, se presente
         var to = go.GetComponent<TimedObstacle>();
         if (to != null)
         {
             to.Init(ev.pointA, ev.pointB, ev.timeToStart, ev.duration, ev.speed);
         }
-
-        // demais componentes (Spin, VFX) já anexados ao prefab atuam por conta própria
     }
+
+    public void OnPause()
+    {
+        pausedAtDSP = AudioSettings.dspTime;
+    }
+
+    public void OnResume()
+    {
+        double nowDSP = AudioSettings.dspTime;
+        double pausedDuration = nowDSP - pausedAtDSP;
+
+        pausedDSPTimeOffset += pausedDuration;
+    }
+
 }

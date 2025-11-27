@@ -7,6 +7,8 @@ public class PauseController : MonoBehaviour
     public GameObject pauseMenu;
     public PlayerInput playerInput; // arraste o PlayerInput do player (ou deixe vazio para buscar)
 
+    public MusicManager musicManager;
+
     private InputAction pauseAction;
     private bool isPaused = false;
 
@@ -61,8 +63,13 @@ public class PauseController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
+        LevelDirector.GamePaused = true;
         if (pauseMenu) pauseMenu.SetActive(true);
         isPaused = true;
+
+        musicManager.PauseMusic();
+
+        LevelDirector.Instance.OnPause();
 
         // opcional: trocar ActionMap para UI se você tiver
         if (playerInput != null) playerInput.SwitchCurrentActionMap("UI");
@@ -71,17 +78,38 @@ public class PauseController : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        LevelDirector.GamePaused = false;
         if (pauseMenu) pauseMenu.SetActive(false);
         isPaused = false;
+
+        musicManager.ResumeMusic();
+        LevelDirector.Instance.OnResume();
         if (playerInput != null) playerInput.SwitchCurrentActionMap("Player");
     }
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        LevelDirector.GamePaused = false;
         if (pauseMenu) pauseMenu.SetActive(false);
         isPaused = false;
         if (playerInput != null) playerInput.SwitchCurrentActionMap("Player");
 
+        musicManager.ResumeMusic();
+        LevelDirector.Instance.OnResume();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
+        LevelDirector.GamePaused = false;
+        if (pauseMenu) pauseMenu.SetActive(false);
+        isPaused = false;
+        if (playerInput != null) playerInput.SwitchCurrentActionMap("Player");
+
+        musicManager.ResumeMusic();
+
+        SceneManager.LoadScene(0);
     }
 }
