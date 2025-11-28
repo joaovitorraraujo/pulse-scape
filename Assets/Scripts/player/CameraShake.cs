@@ -23,6 +23,11 @@ public class CameraShake : MonoBehaviour
         float t = 0;
         while (t < duration)
         {
+            if (LevelDirector.GamePaused)
+            {
+                yield return null;
+                continue;
+            }
             transform.localPosition = originalPos + (Vector3)Random.insideUnitCircle * intensity;
             t += Time.deltaTime;
             yield return null;

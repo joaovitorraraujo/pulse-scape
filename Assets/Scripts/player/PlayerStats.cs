@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum Difficulty
 {
@@ -26,6 +25,8 @@ public class PlayerStats : MonoBehaviour
     [Header("Vida")]
     public int maxLives = 3;
     public int currentLives;
+    private bool isDead = false;
+
     private DamageVFX damageVFX;
 
     [Header("Invencibilidade")]
@@ -78,9 +79,12 @@ public class PlayerStats : MonoBehaviour
     // ----------------------------------------------------
     // TOMAR DANO
     // ----------------------------------------------------
+    [System.Obsolete]
     public void TakeDamage(int dmg)
     {
-        if (isInvincible) return; // ignora dano se estiver invencível
+        
+
+        if (isInvincible || isDead) return; // ignora dano se estiver invencível
         currentLives -= dmg;
 
         // efeito de hit
@@ -224,10 +228,21 @@ public class PlayerStats : MonoBehaviour
     // ----------------------------------------------------
     // MORTE DO PLAYER
     // ----------------------------------------------------
+    [System.Obsolete]
     void PlayerDie()
     {
         Debug.Log("PLAYER MORREU!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        // pode chamar GameOver, reiniciar fase etc.
+
+        if (isDead) return;
+        isDead = true;   // impede dano e impede novo shake
+
+        var go = FindObjectOfType<GameOverController>();
+        if (go != null)
+            go.TriggerGameOver();
+
+        // impede colisões
+        gameObject.layer = LayerMask.NameToLayer("InvinciblePlayer");
     }
+
+
 }   

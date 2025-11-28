@@ -4,6 +4,7 @@ public class PlayerCollision : MonoBehaviour
 {
     public PlayerStats playerStats;
 
+    [System.Obsolete]
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
