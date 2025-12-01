@@ -4623,6 +4623,7 @@ GameObject:
   - component: {fileID: 1326545318}
   - component: {fileID: 1326545317}
   - component: {fileID: 1326545319}
+  - component: {fileID: 1326545320}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -4673,6 +4674,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 2055794530}
+  musicManager: {fileID: 859500260}
+--- !u!114 &1326545320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326545315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea87424e2dc86041968e0b2b04b0277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4922785987160006850}
+  difficultyPanel: {fileID: 2124571666}
+  levelDirector: {fileID: 859500257}
   musicManager: {fileID: 859500260}
 --- !u!1 &1371400271
 GameObject:
@@ -5795,9 +5812,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1326545317}
-        m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: BackToMenu
+      - m_Target: {fileID: 1326545320}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SelectHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6185,9 +6202,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1326545317}
-        m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 1326545320}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SelectEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7256,9 +7273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1326545317}
-        m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: BackToMenu
+      - m_Target: {fileID: 1326545320}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SelectHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7335,7 +7352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2124571667
 RectTransform:
   m_ObjectHideFlags: 0

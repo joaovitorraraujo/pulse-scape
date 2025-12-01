@@ -6,6 +6,8 @@ public class DifficultySelector : MonoBehaviour
     public GameObject difficultyPanel; 
     public LevelDirector levelDirector; 
 
+    public MusicManager musicManager;
+
     void Start()
     {
         // congelar o jogo antes da escolha
@@ -15,6 +17,19 @@ public class DifficultySelector : MonoBehaviour
         // impedir música
         if (levelDirector != null)
             levelDirector.enabled = false;
+    }
+
+    public void TriggerGameOver()
+    {
+        Time.timeScale = 0f;
+        LevelDirector.GamePaused = true;
+        LevelDirector.Instance.OnPause();
+
+        if (musicManager != null)
+            musicManager.PauseMusic();
+
+        if (difficultyPanel)
+            difficultyPanel.SetActive(true);
     }
 
     public void SelectEasy()
@@ -35,6 +50,9 @@ public class DifficultySelector : MonoBehaviour
     void SetDifficulty(Difficulty d)
     {
         player.currentDifficulty = d;
+
+        // reaplicar stats imediatamente
+        player.SetupDifficulty();  
 
         // reativa o level
         if (levelDirector != null)

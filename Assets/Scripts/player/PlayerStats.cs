@@ -52,7 +52,7 @@ public class PlayerStats : MonoBehaviour
         StartCoroutine(AutoSpawnEnergy());
     }
 
-    void SetupDifficulty()
+    public void SetupDifficulty()
     {
         switch (currentDifficulty)
         {
