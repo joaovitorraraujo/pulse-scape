@@ -5,27 +5,35 @@ using UnityEngine;
 [System.Serializable]
 public class LevelEvent
 {
-    public float beat; // em beats (ex: 4.0)
-    public GameObject prefab; // prefab a instanciar (Orb, Laser, etc)
-    public Vector2 pointA; // posição inicial
-    public Vector2 pointB; // posição final
-    public float timeToStart = 1f; // quanto antes do beat precisa spawnar / delay no prefab
-    public float duration = 1f; // duração da ação (timeToDelete)
-    public float speed = 0f; // opcional
-    public bool mirrorX = false; // opcional
+    // EVENTOS NORMAIS
+    public float beat = 0f;
+    public GameObject prefab;
+    public Vector2 pointA;
+    public Vector2 pointB;
+    public float timeToStart = 1f;
+    public float duration = 1f;
+    public float speed = 0f;
+    public bool mirrorX = false;
+
+    // BULLET HELL
+    public BulletSpawner bulletSpawner;
+    public List<BulletPattern> bulletPatterns = new List<BulletPattern>();
 }
 
 public class LevelDirector : MonoBehaviour
 {
     public static LevelDirector Instance;
+
     private double pausedDSPTimeOffset = 0;
     private double pausedAtDSP = 0;
+
     public MusicManager musicManager;
+
     public List<LevelEvent> events = new List<LevelEvent>();
 
     public static bool GamePaused = false;
 
-    [System.Obsolete]
+
     void Awake()
     {
         Instance = this;
@@ -34,42 +42,61 @@ public class LevelDirector : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
-        if (musicManager == null) musicManager = FindObjectOfType<MusicManager>();
-        // Inicia a música (se ainda não iniciou)
+        if (musicManager == null)
+            musicManager = FindObjectOfType<MusicManager>();
+
         musicManager.PlaySong(0f);
 
-        // Agenda todos os eventos
+        // ---------------------------------------------------------
+        // Agenda todos os eventos: Obstáculos + Bullet Patterns
+        // ---------------------------------------------------------
         foreach (var ev in events)
         {
             double eventDsp = musicManager.BeatToDsp(ev.beat);
-            double spawnDsp = eventDsp - ev.timeToStart; // instanciar antes para que o prefab espere timeToStart e atue no beat
-            StartCoroutine(SpawnAtDsp(spawnDsp, ev));
+
+            // Obstáculos normais
+            double spawnDsp = eventDsp - ev.timeToStart;
+            StartCoroutine(SpawnObstacleAtDsp(spawnDsp, ev));
+
+            // Bullet Patterns
+            foreach (var pattern in ev.bulletPatterns)
+            {
+                double bulletDsp = musicManager.BeatToDsp(pattern.beat);
+                StartCoroutine(SpawnPatternAtDsp(bulletDsp, ev, pattern));
+            }
         }
     }
 
-    IEnumerator SpawnAtDsp(double spawnDsp, LevelEvent ev)
+
+    // ===========================================
+    // SPAWN DE OBSTÁCULOS
+    // ===========================================
+    IEnumerator SpawnObstacleAtDsp(double spawnDsp, LevelEvent ev)
     {
-        // espera até o dspTime de spawn
         while (AudioSettings.dspTime - pausedDSPTimeOffset < spawnDsp)
         {
-            while (GamePaused) // pausa REAL
+            while (GamePaused)
                 yield return null;
+
             yield return null;
         }
 
-        SpawnEvent(ev);
+        SpawnObstacle(ev);
     }
 
-    void SpawnEvent(LevelEvent ev)
+    void SpawnObstacle(LevelEvent ev)
     {
+        if (ev.prefab == null) return;
+
         Vector3 spawnPos = new Vector3(ev.pointA.x, ev.pointA.y, 0f);
         GameObject go = Instantiate(ev.prefab, spawnPos, Quaternion.identity);
 
+        // espelhamento opcional
         if (ev.mirrorX)
         {
-            var p = go.transform.position; p.x = -p.x; go.transform.position = p;
-            ev.pointA.x = -ev.pointA.x;
-            ev.pointB.x = -ev.pointB.x;
+            var p = go.transform.position;
+            p.x = -p.x;
+            go.transform.position = p;
         }
 
         var to = go.GetComponent<TimedObstacle>();
@@ -79,6 +106,29 @@ public class LevelDirector : MonoBehaviour
         }
     }
 
+
+    // ===========================================
+    // SPAWN DE BULLET PATTERNS
+    // ===========================================
+    [System.Obsolete]
+    IEnumerator SpawnPatternAtDsp(double dspTarget, LevelEvent ev, BulletPattern pattern)
+    {
+        while (AudioSettings.dspTime - pausedDSPTimeOffset < dspTarget)
+        {
+            while (GamePaused)
+                yield return null;
+
+            yield return null;
+        }
+
+        if (ev.bulletSpawner != null)
+            ev.bulletSpawner.ExecutePattern(pattern);
+    }
+
+
+    // ===========================================
+    // CONTROLE DE PAUSA REAL (DSP)
+    // ===========================================
     public void OnPause()
     {
         pausedAtDSP = AudioSettings.dspTime;
@@ -86,10 +136,7 @@ public class LevelDirector : MonoBehaviour
 
     public void OnResume()
     {
-        double nowDSP = AudioSettings.dspTime;
-        double pausedDuration = nowDSP - pausedAtDSP;
-
-        pausedDSPTimeOffset += pausedDuration;
+        double now = AudioSettings.dspTime;
+        pausedDSPTimeOffset += (now - pausedAtDSP);
     }
-
 }
