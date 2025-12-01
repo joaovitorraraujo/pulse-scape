@@ -1948,11 +1948,11 @@ MonoBehaviour:
   musicManager: {fileID: 859500260}
   events:
   - beat: 4
-    prefab: {fileID: 925793815143280936, guid: b0246f97c54a9c4419bbb9a291ebcfe6, type: 3}
-    pointA: {x: 10, y: 0}
-    pointB: {x: -10, y: 0}
+    prefab: {fileID: 925793815143280936, guid: 1429c7768005a2d44b68f9249ca35def, type: 3}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
     timeToStart: 1.2
-    duration: 1.2
+    duration: 5
     speed: 0
     mirrorX: 0
     bulletSpawner: {fileID: 1627534805}
@@ -2922,6 +2922,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031014523}
   m_CullTransparentMesh: 1
+--- !u!1 &1043449720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043449721}
+  - component: {fileID: 1043449722}
+  m_Layer: 0
+  m_Name: DirectorCutScence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043449721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043449720}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.005888, y: -0.5961305, z: -2.3263547}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1043449722
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043449720}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: eca7928d5739bcd44a1c469694bf87c1, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1076639300
 GameObject:
   m_ObjectHideFlags: 0
@@ -5633,3 +5682,4 @@ SceneRoots:
   - {fileID: 1326545318}
   - {fileID: 505847491}
   - {fileID: 1811581704}
+  - {fileID: 1043449721}
