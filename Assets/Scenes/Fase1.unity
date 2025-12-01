@@ -2738,16 +2738,690 @@ MonoBehaviour:
     mirrorX: 0
     bulletSpawner: {fileID: 0}
     bulletPatterns: []
-  - beat: 120
-    prefab: {fileID: 925793815143280936, guid: 1429c7768005a2d44b68f9249ca35def, type: 3}
-    pointA: {x: 0, y: 5}
-    pointB: {x: 0, y: 5}
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 109
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 110
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 111
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 112
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 113
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 114
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 115
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 116
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 117
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 118
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 119
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 120
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 121
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 122
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 123
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 124
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 125
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 126
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 127
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 128
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 129
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 130
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 131
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 132
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: f4dc351f93d5bfd4392c4716dee45408, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 133
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 134
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 135
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 136
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: b2ae15198ec492f47a2cd31831185135, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 137
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 138
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 139
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 140
+      type: 0
+      bulletPrefab: {fileID: 925793815143280936, guid: 4c8e8bc5a57c4264d9e7d2fbfa98673a, type: 3}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 5
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 2086663991}
+    bulletPatterns:
+    - beat: 141
+      type: 3
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 15
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 10
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1627534805}
+    bulletPatterns:
+    - beat: 144
+      type: 3
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 15
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 10
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 1749963247}
+    bulletPatterns:
+    - beat: 148
+      type: 3
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 15
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 10
+  - beat: 110
+    prefab: {fileID: 0}
+    pointA: {x: 0, y: 0}
+    pointB: {x: 0, y: 0}
+    timeToStart: 1.2
+    duration: 0
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 152
+      type: 3
+      bulletPrefab: {fileID: 925793815143280936, guid: 141e9b631318cbe41a64935a29597310, type: 3}
+      count: 15
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 10
+  - beat: 165
+    prefab: {fileID: 925793815143280936, guid: 493ce38a0cfda5f4789010cfe78593b5, type: 3}
+    pointA: {x: -4, y: 0}
+    pointB: {x: -4, y: 0}
     timeToStart: 1.2
     duration: 5
     speed: 0
     mirrorX: 0
-    bulletSpawner: {fileID: 0}
-    bulletPatterns: []
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 152
+      type: 3
+      bulletPrefab: {fileID: 0}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 10
+  - beat: 170
+    prefab: {fileID: 925793815143280936, guid: 493ce38a0cfda5f4789010cfe78593b5, type: 3}
+    pointA: {x: 4, y: 0}
+    pointB: {x: 4, y: 0}
+    timeToStart: 1.2
+    duration: 5
+    speed: 0
+    mirrorX: 0
+    bulletSpawner: {fileID: 189874025}
+    bulletPatterns:
+    - beat: 152
+      type: 3
+      bulletPrefab: {fileID: 0}
+      count: 10
+      speed: 10
+      radius: 10
+      angleOffset: 0
+      duration: 10
 --- !u!4 &859500258
 Transform:
   m_ObjectHideFlags: 0
@@ -6089,10 +6763,10 @@ Transform:
   m_Children:
   - {fileID: 1627534804}
   - {fileID: 189874024}
-  - {fileID: 1749963246}
-  - {fileID: 744649763}
   - {fileID: 17808322}
+  - {fileID: 1749963246}
   - {fileID: 2086663990}
+  - {fileID: 744649763}
   - {fileID: 1651631767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
