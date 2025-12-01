@@ -21,7 +21,7 @@ public class BulletSpawner : MonoBehaviour
                 break;
 
             case PatternType.TargetPlayer:
-                SpawnTargetPlayer(p);
+                StartCoroutine(SpawnTargetPlayer(p));
                 break;
 
             case PatternType.Rain:
@@ -69,7 +69,7 @@ public class BulletSpawner : MonoBehaviour
     {
         for (int i = 0; i < p.count; i++)
         {
-            float angle = Mathf.Sin(i * 0.3f) * 45f;
+            float angle = Mathf.Sin(i * 0.3f) * 45f + p.angleOffset;
             Vector2 dir = Quaternion.Euler(0, 0, angle) * Vector2.right;
 
             var b = Instantiate(p.bulletPrefab, transform.position, Quaternion.identity);
@@ -81,15 +81,28 @@ public class BulletSpawner : MonoBehaviour
 
     // -------------- Target Player ------------------
     [System.Obsolete]
-    void SpawnTargetPlayer(BulletPattern p)
+    IEnumerator SpawnTargetPlayer(BulletPattern p)
     {
         var player = GameObject.FindGameObjectWithTag("Player");
-        if (player == null) return;
+        if (player == null) yield break;
 
-        Vector2 dir = (player.transform.position - transform.position).normalized;
+        for (int i = 0; i < p.count; i++)
+        {
+            Vector2 dir = (player.transform.position - transform.position).normalized;
 
-        var b = Instantiate(p.bulletPrefab, transform.position, Quaternion.identity);
-        b.GetComponent<Rigidbody2D>().velocity = dir * p.speed;
+            // variação opcional no alvo (spray)
+            float spread = p.angleOffset; 
+            if (spread != 0)
+            {
+                float angle = Random.Range(-spread, spread);
+                dir = Quaternion.Euler(0, 0, angle) * dir;
+            }
+
+            var b = Instantiate(p.bulletPrefab, transform.position, Quaternion.identity);
+            b.GetComponent<Rigidbody2D>().velocity = dir * p.speed;
+
+            yield return new WaitForSeconds(p.duration / p.count); // controla tempo
+        }
     }
 
     // ---------------- Rain -------------------------

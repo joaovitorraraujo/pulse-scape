@@ -7,7 +7,7 @@ public class LevelEvent
 {
     // EVENTOS NORMAIS
     public float beat = 0f;
-    public GameObject prefab;
+    public GameObject prefab = null;
     public Vector2 pointA;
     public Vector2 pointB;
     public float timeToStart = 1f;
