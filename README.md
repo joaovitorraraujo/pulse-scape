@@ -31,7 +31,6 @@ O jogo é dividido em **5 mundos**, cada um com uma música única e obstáculos
 | Ação                    | Teclado Principal | Alternativo             |
 | ----------------------- | ----------------- | ----------------------- |
 | Movimentar              | W, A, S, D        | Setas                   |
-| Escudo Sonoro           | C                 | Botão Esquerdo do Mouse |
 | Pulso de Energia (Dash) | Espaço            | Botão Direito do Mouse  |
 | Pausar                  | ESC               | —                       |
 | Confirmar               | Enter             | Botão Direito do Mouse  |
